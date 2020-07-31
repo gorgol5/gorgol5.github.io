@@ -23,7 +23,7 @@ let playRound = function (playerSelection, computerSelection) {
   ) {
     return (
       (computerScore += 1) &&
-      (text = `You loose this round. Computer choose ${computerSelection}.Computer choose ${computerSelection}.`) &&
+      (text = `You loose this round. Computer choose ${computerSelection}.`) &&
       (rounds -= 1)
     );
   } else if (
@@ -57,7 +57,7 @@ let overallScore = function () {
   } else if (rounds > 0) {
     totalResult = "You dont play enough rounds.";
   } else {
-    totalResult = "Match is over.";
+    totalResult = "Match is over. Start again!";
     rounds = 5;
     roundCounter = 0;
   }
