@@ -1,0 +1,28 @@
+body {
+  background-color: royalblue;
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body button {
+  background-color: royalblue;
+  border: 1px solid black;
+  height: 200px;
+  width: 265px;
+  border-radius: 25px;
+  font-weight: bold;
+  color: rgb(255, 0, 13);
+  font-size: 30px;
+  background-size: contain;
+  /* background-color: rgba(0, 0, 0, 0.5); */
+}
+#rock {
+  background-image: url(rock.jpg);
+}
+#paper {
+  background-image: url(paper.jpg);
+}
+#scissors {
+  background-image: url(scissors.jpg);
+}
