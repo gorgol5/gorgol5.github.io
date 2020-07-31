@@ -4,6 +4,7 @@ body {
   font-size: 30px;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
+  max-width: 100%;
 }
 body button {
   background-color: royalblue;
