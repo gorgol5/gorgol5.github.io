@@ -15,7 +15,7 @@ let computerPlay = function () {
 };
 let playRound = function (playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
-    return (text = "This time you draw ");
+    return (text = "This time you draw ") && drawAtTheEnd();
   } else if (
     (playerSelection == "rock" && computerSelection == "paper") ||
     (playerSelection == "paper" && computerSelection == "scissors") ||
@@ -38,6 +38,16 @@ let playRound = function (playerSelection, computerSelection) {
     );
   }
 };
+let drawAtTheEnd = function () {
+  if (
+    matchResult == "Match is over. Start again!" ||
+    matchResult == "Computer win this match." ||
+    matchResult == "You win this match."
+  ) {
+    rounds = 5;
+    roundCounter = 0;
+  }
+};
 let Round = function () {
   computerPlay();
   playRound(playerSelection, computerSelection);
@@ -48,6 +58,7 @@ let roundResult = document.querySelector(".roundResult");
 let matchResult = document.querySelector(".matchResult");
 let round = document.querySelector(".rounds");
 const buttons = document.querySelectorAll(".button");
+const restart = document.querySelector(".restart");
 
 let overallScore = function () {
   if (playerScore >= 3 && rounds == 0) {
@@ -73,3 +84,10 @@ buttons.forEach((button) =>
     roundCounter += 1;
   })
 );
+restart.addEventListener("click", () => {
+  rounds = 5;
+  roundCounter = 0;
+  roundResult.innerHTML = `Match restarted`;
+  matchResult.innerHTML = `Match restarted `;
+  round.innerHTML = `You play ${roundCounter} rounds. Rounds to go: ${rounds}`;
+});

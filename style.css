@@ -13,7 +13,6 @@ body {
   max-width: 100%;
 }
 body button {
-  background-color: royalblue;
   border: 1px solid black;
   height: 200px;
   width: 265px;
@@ -30,7 +29,7 @@ body button {
   margin-top: 50px;
 }
 .roundResult {
-  color: darkred;
+  color: rgb(255, 0, 13);
 }
 #rock {
   background-image: url(rock.jpg);
@@ -40,4 +39,8 @@ body button {
 }
 #scissors {
   background-image: url(scissors.jpg);
+}
+.restart {
+  background-color: white;
+  height: 50%;
 }
