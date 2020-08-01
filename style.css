@@ -21,6 +21,8 @@ body button {
   color: rgb(255, 0, 13);
   font-size: 30px;
   background-size: contain;
+  outline: none;
+  cursor: pointer;
 }
 .container {
   border: 2px solid white;
