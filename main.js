@@ -40,12 +40,15 @@ let playRound = function (playerSelection, computerSelection) {
 };
 let drawAtTheEnd = function () {
   if (
+    rounds == 0 ||
     matchResult == "Match is over. Start again!" ||
     matchResult == "Computer win this match." ||
     matchResult == "You win this match."
   ) {
     rounds = 5;
     roundCounter = 0;
+    computerScore = 0;
+    playerScore = 0;
   }
 };
 let Round = function () {
@@ -56,6 +59,7 @@ let Round = function () {
 //-----------------------------------------------------//
 let roundResult = document.querySelector(".roundResult");
 let matchResult = document.querySelector(".matchResult");
+let overallResult = document.querySelector(".overallResult");
 let round = document.querySelector(".rounds");
 const buttons = document.querySelectorAll(".button");
 const restart = document.querySelector(".restart");
@@ -69,6 +73,8 @@ let overallScore = function () {
     totalResult = "You dont play enough rounds.";
   } else {
     totalResult = "Match is over. Start again!";
+    computerScore = 0;
+    playerScore = 0;
     rounds = 5;
     roundCounter = 0;
   }
@@ -79,6 +85,7 @@ buttons.forEach((button) =>
     playerSelection = `${button.id}`;
     Round();
     roundResult.innerHTML = `${text}`;
+    overallResult.innerHTML = `Player ${playerScore}:${computerScore} Computer`;
     matchResult.innerHTML = `${totalResult} `;
     round.innerHTML = `You play ${roundCounter} rounds. Rounds to go: ${rounds}`;
     roundCounter += 1;
@@ -87,7 +94,10 @@ buttons.forEach((button) =>
 restart.addEventListener("click", () => {
   rounds = 5;
   roundCounter = 0;
+  computerScore = 0;
+  playerScore = 0;
   roundResult.innerHTML = `Match restarted`;
   matchResult.innerHTML = `Match restarted `;
   round.innerHTML = `You play ${roundCounter} rounds. Rounds to go: ${rounds}`;
+  overallResult.innerHTML = `Player ${playerScore}:${computerScore} Computer`;
 });
